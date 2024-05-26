@@ -48,8 +48,8 @@ document.addEventListener("DOMContentLoaded", async () => {
                 return `
                 <li class="list-group-item ${isOverlap(service, services) ? 'bg-danger' : 'bg-success'}">
                 <p class='list-group-item_'>${dichvukythuat}</p> 
-                <p class='list-group-item_'><strong>Bắt đầu: </strong> ${moment(thoigianthuchien, "D/M/YYYY h:mm A").format("YYYY-MM-DDTHH:mm:ss")}</p>
-                <p class='list-group-item_'><strong>Kết thúc: </strong> ${moment(thoigianketthuc, "D/M/YYYY h:mm A").format("YYYY-MM-DDTHH:mm:ss")}</p>
+                <p class='list-group-item_'><i class="bi bi-clock"></i> ${moment(thoigianthuchien, "D/M/YYYY h:mm A").format("YYYY-MM-DDTHH:mm:ss")}</p>
+                <p class='list-group-item_'><i class="bi bi-clock-history"></i> ${moment(thoigianketthuc, "D/M/YYYY h:mm A").format("YYYY-MM-DDTHH:mm:ss")}</p>
             </li>`;
             }).join('');
 
@@ -82,9 +82,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         container.appendChild(fragment);
 
         // Cập nhật thống kê
-        totalRecordsElement.textContent = `Tổng số hồ sơ kiểm tra: ${totalRecords}`;
-        validRecordsElement.textContent = `Tổng số hồ sơ có dữ liệu đúng: ${validRecords}`;
-        invalidRecordsElement.textContent = `Tổng số hồ sơ có dữ liệu trùng: ${invalidRecords}`;
+        totalRecordsElement.textContent = ` ${totalRecords} hồ sơ`;
+        validRecordsElement.textContent = ` ${validRecords} hồ sơ`;
+        invalidRecordsElement.textContent = ` ${invalidRecords} hồ sơ`;
 
         // Hiển thị danh sách bệnh án có dữ liệu trùng
         invalidRecordsList.innerHTML = invalidPatientRecords.map(record => `
@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         container.style.display = 'block';
     } catch (error) {
         console.error('Error fetching JSON:', error);
-        loadingElement.innerHTML = '<p class="text-danger">Error loading data. Please try again later.</p>';
+        loadingElement.innerHTML = '<p class="text-danger">Lỗi, vui lòng kiểm tra lại đường truyền internet hoặc file trang tính.</p>';
     }
 });
 

@@ -31,3 +31,12 @@ p {
 a {
     text-decoration: none;
 }
+.bi-person-lines-fill{
+    color: var(--bs-primary)
+}
+.bi-check-circle-fill{
+    color: var(--bs-success);
+}
+.bi-exclamation-circle-fill{
+    color: var(--bs-warning);
+}
