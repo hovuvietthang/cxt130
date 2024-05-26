@@ -23,3 +23,11 @@ p {
     margin: 0;
     padding: 0;
 }
+.list-group-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+a {
+    text-decoration: none;
+}
